@@ -1,8 +1,16 @@
 print("Put numbers: ")
-posled = [int(i) for i in input().split()]
+posled = [float(i) for i in input().split()]
 le = len(posled) - 1
 check = True
 if len(posled) > 1:
+    posled2 = []
+    for i in range(len(posled)):
+        if posled[i] < 0:
+            posled2.append(posled[i])
+    if len(posled2) == len(posled):
+        posled.sort()
+    else:
+        posled.sort(key=abs)
     q = posled[1]/posled[0]
     print("q = ", q)
     posled.sort(key=abs)
